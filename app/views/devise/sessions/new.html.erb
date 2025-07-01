@@ -1,6 +1,6 @@
 <h2>Log in</h2>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: false }) do |f| %>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
   <!-- 🔽 name フィールドを email の代わりに追加 -->

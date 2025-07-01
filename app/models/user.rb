@@ -13,4 +13,9 @@ class User < ApplicationRecord
   validates :name, uniqueness: true, length: { in: 2..20 }
   validates :introduction, length: { maximum: 50 }
 
+  def self.find_for_database_authentication(warden_conditions)
+    conditions = warden_conditions.dup
+    where(name: conditions[:name]).first
+  end
+
 end
